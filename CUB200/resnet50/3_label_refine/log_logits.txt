@@ -1,0 +1,362 @@
+{'gpu_id': '1', 'data_base': '/mnt/ramdisk/CUB/trainval', 'class_num': 200, 'pretrain_model': '/opt/luojh/pretrained_models/cub200/ResNet50.pth', 'batch_size': 32, 'proxy_dataset_size': 256, '6x_larger_dataset': '/mnt/ramdisk/CUB/cub6w'}
+Namespace(alpha=1.0, batch_size=32, dist_backend='gloo', dist_url='tcp://224.66.41.62:23456', epochs=300, evaluate=False, lr=0.001, momentum=0.9, pretrained=False, print_freq=10, resume='', start_epoch=0, weight_decay=0.0005, workers=8, world_size=1, yaml_file='../config.yaml')
+====================================================================================================
+                                             Kernel Shape       Output Shape  \
+Layer                                                                          
+0_conv1                                     [3, 64, 7, 7]  [1, 64, 112, 112]   
+1_bn1                                                [64]  [1, 64, 112, 112]   
+2_relu                                                  -  [1, 64, 112, 112]   
+3_maxpool                                               -    [1, 64, 56, 56]   
+4_layer1.0.Conv2d_conv1                    [64, 64, 1, 1]    [1, 64, 56, 56]   
+5_layer1.0.BatchNorm2d_bn1                           [64]    [1, 64, 56, 56]   
+6_layer1.0.ReLU_relu                                    -    [1, 64, 56, 56]   
+7_layer1.0.Conv2d_conv2                    [64, 64, 3, 3]    [1, 64, 56, 56]   
+8_layer1.0.BatchNorm2d_bn2                           [64]    [1, 64, 56, 56]   
+9_layer1.0.ReLU_relu                                    -    [1, 64, 56, 56]   
+10_layer1.0.Conv2d_conv3                  [64, 256, 1, 1]   [1, 256, 56, 56]   
+11_layer1.0.BatchNorm2d_bn3                         [256]   [1, 256, 56, 56]   
+12_layer1.0.downsample.Conv2d_0           [64, 256, 1, 1]   [1, 256, 56, 56]   
+13_layer1.0.downsample.BatchNorm2d_1                [256]   [1, 256, 56, 56]   
+14_layer1.0.ReLU_relu                                   -   [1, 256, 56, 56]   
+15_layer1.1.Conv2d_conv1                  [256, 64, 1, 1]    [1, 64, 56, 56]   
+16_layer1.1.BatchNorm2d_bn1                          [64]    [1, 64, 56, 56]   
+17_layer1.1.ReLU_relu                                   -    [1, 64, 56, 56]   
+18_layer1.1.Conv2d_conv2                   [64, 64, 3, 3]    [1, 64, 56, 56]   
+19_layer1.1.BatchNorm2d_bn2                          [64]    [1, 64, 56, 56]   
+20_layer1.1.ReLU_relu                                   -    [1, 64, 56, 56]   
+21_layer1.1.Conv2d_conv3                  [64, 256, 1, 1]   [1, 256, 56, 56]   
+22_layer1.1.BatchNorm2d_bn3                         [256]   [1, 256, 56, 56]   
+23_layer1.1.ReLU_relu                                   -   [1, 256, 56, 56]   
+24_layer1.2.Conv2d_conv1                  [256, 64, 1, 1]    [1, 64, 56, 56]   
+25_layer1.2.BatchNorm2d_bn1                          [64]    [1, 64, 56, 56]   
+26_layer1.2.ReLU_relu                                   -    [1, 64, 56, 56]   
+27_layer1.2.Conv2d_conv2                   [64, 64, 3, 3]    [1, 64, 56, 56]   
+28_layer1.2.BatchNorm2d_bn2                          [64]    [1, 64, 56, 56]   
+29_layer1.2.ReLU_relu                                   -    [1, 64, 56, 56]   
+30_layer1.2.Conv2d_conv3                  [64, 256, 1, 1]   [1, 256, 56, 56]   
+31_layer1.2.BatchNorm2d_bn3                         [256]   [1, 256, 56, 56]   
+32_layer1.2.ReLU_relu                                   -   [1, 256, 56, 56]   
+33_layer2.0.Conv2d_conv1                 [256, 128, 1, 1]   [1, 128, 56, 56]   
+34_layer2.0.BatchNorm2d_bn1                         [128]   [1, 128, 56, 56]   
+35_layer2.0.ReLU_relu                                   -   [1, 128, 56, 56]   
+36_layer2.0.Conv2d_conv2                 [128, 128, 3, 3]   [1, 128, 28, 28]   
+37_layer2.0.BatchNorm2d_bn2                         [128]   [1, 128, 28, 28]   
+38_layer2.0.ReLU_relu                                   -   [1, 128, 28, 28]   
+39_layer2.0.Conv2d_conv3                 [128, 512, 1, 1]   [1, 512, 28, 28]   
+40_layer2.0.BatchNorm2d_bn3                         [512]   [1, 512, 28, 28]   
+41_layer2.0.downsample.Conv2d_0          [256, 512, 1, 1]   [1, 512, 28, 28]   
+42_layer2.0.downsample.BatchNorm2d_1                [512]   [1, 512, 28, 28]   
+43_layer2.0.ReLU_relu                                   -   [1, 512, 28, 28]   
+44_layer2.1.Conv2d_conv1                 [512, 128, 1, 1]   [1, 128, 28, 28]   
+45_layer2.1.BatchNorm2d_bn1                         [128]   [1, 128, 28, 28]   
+46_layer2.1.ReLU_relu                                   -   [1, 128, 28, 28]   
+47_layer2.1.Conv2d_conv2                 [128, 128, 3, 3]   [1, 128, 28, 28]   
+48_layer2.1.BatchNorm2d_bn2                         [128]   [1, 128, 28, 28]   
+49_layer2.1.ReLU_relu                                   -   [1, 128, 28, 28]   
+50_layer2.1.Conv2d_conv3                 [128, 512, 1, 1]   [1, 512, 28, 28]   
+51_layer2.1.BatchNorm2d_bn3                         [512]   [1, 512, 28, 28]   
+52_layer2.1.ReLU_relu                                   -   [1, 512, 28, 28]   
+53_layer2.2.Conv2d_conv1                 [512, 128, 1, 1]   [1, 128, 28, 28]   
+54_layer2.2.BatchNorm2d_bn1                         [128]   [1, 128, 28, 28]   
+55_layer2.2.ReLU_relu                                   -   [1, 128, 28, 28]   
+56_layer2.2.Conv2d_conv2                 [128, 128, 3, 3]   [1, 128, 28, 28]   
+57_layer2.2.BatchNorm2d_bn2                         [128]   [1, 128, 28, 28]   
+58_layer2.2.ReLU_relu                                   -   [1, 128, 28, 28]   
+59_layer2.2.Conv2d_conv3                 [128, 512, 1, 1]   [1, 512, 28, 28]   
+60_layer2.2.BatchNorm2d_bn3                         [512]   [1, 512, 28, 28]   
+61_layer2.2.ReLU_relu                                   -   [1, 512, 28, 28]   
+62_layer2.3.Conv2d_conv1                 [512, 128, 1, 1]   [1, 128, 28, 28]   
+63_layer2.3.BatchNorm2d_bn1                         [128]   [1, 128, 28, 28]   
+64_layer2.3.ReLU_relu                                   -   [1, 128, 28, 28]   
+65_layer2.3.Conv2d_conv2                 [128, 128, 3, 3]   [1, 128, 28, 28]   
+66_layer2.3.BatchNorm2d_bn2                         [128]   [1, 128, 28, 28]   
+67_layer2.3.ReLU_relu                                   -   [1, 128, 28, 28]   
+68_layer2.3.Conv2d_conv3                 [128, 512, 1, 1]   [1, 512, 28, 28]   
+69_layer2.3.BatchNorm2d_bn3                         [512]   [1, 512, 28, 28]   
+70_layer2.3.ReLU_relu                                   -   [1, 512, 28, 28]   
+71_layer3.0.Conv2d_conv1                 [512, 256, 1, 1]   [1, 256, 28, 28]   
+72_layer3.0.BatchNorm2d_bn1                         [256]   [1, 256, 28, 28]   
+73_layer3.0.ReLU_relu                                   -   [1, 256, 28, 28]   
+74_layer3.0.Conv2d_conv2                 [256, 256, 3, 3]   [1, 256, 14, 14]   
+75_layer3.0.BatchNorm2d_bn2                         [256]   [1, 256, 14, 14]   
+76_layer3.0.ReLU_relu                                   -   [1, 256, 14, 14]   
+77_layer3.0.Conv2d_conv3                [256, 1024, 1, 1]  [1, 1024, 14, 14]   
+78_layer3.0.BatchNorm2d_bn3                        [1024]  [1, 1024, 14, 14]   
+79_layer3.0.downsample.Conv2d_0         [512, 1024, 1, 1]  [1, 1024, 14, 14]   
+80_layer3.0.downsample.BatchNorm2d_1               [1024]  [1, 1024, 14, 14]   
+81_layer3.0.ReLU_relu                                   -  [1, 1024, 14, 14]   
+82_layer3.1.Conv2d_conv1                [1024, 256, 1, 1]   [1, 256, 14, 14]   
+83_layer3.1.BatchNorm2d_bn1                         [256]   [1, 256, 14, 14]   
+84_layer3.1.ReLU_relu                                   -   [1, 256, 14, 14]   
+85_layer3.1.Conv2d_conv2                 [256, 256, 3, 3]   [1, 256, 14, 14]   
+86_layer3.1.BatchNorm2d_bn2                         [256]   [1, 256, 14, 14]   
+87_layer3.1.ReLU_relu                                   -   [1, 256, 14, 14]   
+88_layer3.1.Conv2d_conv3                [256, 1024, 1, 1]  [1, 1024, 14, 14]   
+89_layer3.1.BatchNorm2d_bn3                        [1024]  [1, 1024, 14, 14]   
+90_layer3.1.ReLU_relu                                   -  [1, 1024, 14, 14]   
+91_layer3.2.Conv2d_conv1                [1024, 256, 1, 1]   [1, 256, 14, 14]   
+92_layer3.2.BatchNorm2d_bn1                         [256]   [1, 256, 14, 14]   
+93_layer3.2.ReLU_relu                                   -   [1, 256, 14, 14]   
+94_layer3.2.Conv2d_conv2                 [256, 256, 3, 3]   [1, 256, 14, 14]   
+95_layer3.2.BatchNorm2d_bn2                         [256]   [1, 256, 14, 14]   
+96_layer3.2.ReLU_relu                                   -   [1, 256, 14, 14]   
+97_layer3.2.Conv2d_conv3                [256, 1024, 1, 1]  [1, 1024, 14, 14]   
+98_layer3.2.BatchNorm2d_bn3                        [1024]  [1, 1024, 14, 14]   
+99_layer3.2.ReLU_relu                                   -  [1, 1024, 14, 14]   
+100_layer3.3.Conv2d_conv1               [1024, 256, 1, 1]   [1, 256, 14, 14]   
+101_layer3.3.BatchNorm2d_bn1                        [256]   [1, 256, 14, 14]   
+102_layer3.3.ReLU_relu                                  -   [1, 256, 14, 14]   
+103_layer3.3.Conv2d_conv2                [256, 256, 3, 3]   [1, 256, 14, 14]   
+104_layer3.3.BatchNorm2d_bn2                        [256]   [1, 256, 14, 14]   
+105_layer3.3.ReLU_relu                                  -   [1, 256, 14, 14]   
+106_layer3.3.Conv2d_conv3               [256, 1024, 1, 1]  [1, 1024, 14, 14]   
+107_layer3.3.BatchNorm2d_bn3                       [1024]  [1, 1024, 14, 14]   
+108_layer3.3.ReLU_relu                                  -  [1, 1024, 14, 14]   
+109_layer3.4.Conv2d_conv1               [1024, 256, 1, 1]   [1, 256, 14, 14]   
+110_layer3.4.BatchNorm2d_bn1                        [256]   [1, 256, 14, 14]   
+111_layer3.4.ReLU_relu                                  -   [1, 256, 14, 14]   
+112_layer3.4.Conv2d_conv2                [256, 256, 3, 3]   [1, 256, 14, 14]   
+113_layer3.4.BatchNorm2d_bn2                        [256]   [1, 256, 14, 14]   
+114_layer3.4.ReLU_relu                                  -   [1, 256, 14, 14]   
+115_layer3.4.Conv2d_conv3               [256, 1024, 1, 1]  [1, 1024, 14, 14]   
+116_layer3.4.BatchNorm2d_bn3                       [1024]  [1, 1024, 14, 14]   
+117_layer3.4.ReLU_relu                                  -  [1, 1024, 14, 14]   
+118_layer3.5.Conv2d_conv1               [1024, 256, 1, 1]   [1, 256, 14, 14]   
+119_layer3.5.BatchNorm2d_bn1                        [256]   [1, 256, 14, 14]   
+120_layer3.5.ReLU_relu                                  -   [1, 256, 14, 14]   
+121_layer3.5.Conv2d_conv2                [256, 256, 3, 3]   [1, 256, 14, 14]   
+122_layer3.5.BatchNorm2d_bn2                        [256]   [1, 256, 14, 14]   
+123_layer3.5.ReLU_relu                                  -   [1, 256, 14, 14]   
+124_layer3.5.Conv2d_conv3               [256, 1024, 1, 1]  [1, 1024, 14, 14]   
+125_layer3.5.BatchNorm2d_bn3                       [1024]  [1, 1024, 14, 14]   
+126_layer3.5.ReLU_relu                                  -  [1, 1024, 14, 14]   
+127_layer4.0.Conv2d_conv1               [1024, 512, 1, 1]   [1, 512, 14, 14]   
+128_layer4.0.BatchNorm2d_bn1                        [512]   [1, 512, 14, 14]   
+129_layer4.0.ReLU_relu                                  -   [1, 512, 14, 14]   
+130_layer4.0.Conv2d_conv2                [512, 512, 3, 3]     [1, 512, 7, 7]   
+131_layer4.0.BatchNorm2d_bn2                        [512]     [1, 512, 7, 7]   
+132_layer4.0.ReLU_relu                                  -     [1, 512, 7, 7]   
+133_layer4.0.Conv2d_conv3               [512, 2048, 1, 1]    [1, 2048, 7, 7]   
+134_layer4.0.BatchNorm2d_bn3                       [2048]    [1, 2048, 7, 7]   
+135_layer4.0.downsample.Conv2d_0       [1024, 2048, 1, 1]    [1, 2048, 7, 7]   
+136_layer4.0.downsample.BatchNorm2d_1              [2048]    [1, 2048, 7, 7]   
+137_layer4.0.ReLU_relu                                  -    [1, 2048, 7, 7]   
+138_layer4.1.Conv2d_conv1               [2048, 512, 1, 1]     [1, 512, 7, 7]   
+139_layer4.1.BatchNorm2d_bn1                        [512]     [1, 512, 7, 7]   
+140_layer4.1.ReLU_relu                                  -     [1, 512, 7, 7]   
+141_layer4.1.Conv2d_conv2                [512, 512, 3, 3]     [1, 512, 7, 7]   
+142_layer4.1.BatchNorm2d_bn2                        [512]     [1, 512, 7, 7]   
+143_layer4.1.ReLU_relu                                  -     [1, 512, 7, 7]   
+144_layer4.1.Conv2d_conv3               [512, 2048, 1, 1]    [1, 2048, 7, 7]   
+145_layer4.1.BatchNorm2d_bn3                       [2048]    [1, 2048, 7, 7]   
+146_layer4.1.ReLU_relu                                  -    [1, 2048, 7, 7]   
+147_layer4.2.Conv2d_conv1               [2048, 512, 1, 1]     [1, 512, 7, 7]   
+148_layer4.2.BatchNorm2d_bn1                        [512]     [1, 512, 7, 7]   
+149_layer4.2.ReLU_relu                                  -     [1, 512, 7, 7]   
+150_layer4.2.Conv2d_conv2                [512, 512, 3, 3]     [1, 512, 7, 7]   
+151_layer4.2.BatchNorm2d_bn2                        [512]     [1, 512, 7, 7]   
+152_layer4.2.ReLU_relu                                  -     [1, 512, 7, 7]   
+153_layer4.2.Conv2d_conv3               [512, 2048, 1, 1]    [1, 2048, 7, 7]   
+154_layer4.2.BatchNorm2d_bn3                       [2048]    [1, 2048, 7, 7]   
+155_layer4.2.ReLU_relu                                  -    [1, 2048, 7, 7]   
+156_avgpool                                             -    [1, 2048, 1, 1]   
+157_fc                                        [2048, 200]           [1, 200]   
+
+                                         Params Mult-Adds  
+Layer                                                      
+0_conv1                                  9.408k  118.014M  
+1_bn1                                       128        64  
+2_relu                                        -         -  
+3_maxpool                                     -         -  
+4_layer1.0.Conv2d_conv1                  4.096k  12.8451M  
+5_layer1.0.BatchNorm2d_bn1                  128        64  
+6_layer1.0.ReLU_relu                          -         -  
+7_layer1.0.Conv2d_conv2                 36.864k  115.606M  
+8_layer1.0.BatchNorm2d_bn2                  128        64  
+9_layer1.0.ReLU_relu                          -         -  
+10_layer1.0.Conv2d_conv3                16.384k  51.3802M  
+11_layer1.0.BatchNorm2d_bn3                 512       256  
+12_layer1.0.downsample.Conv2d_0         16.384k  51.3802M  
+13_layer1.0.downsample.BatchNorm2d_1        512       256  
+14_layer1.0.ReLU_relu                         -         -  
+15_layer1.1.Conv2d_conv1                16.384k  51.3802M  
+16_layer1.1.BatchNorm2d_bn1                 128        64  
+17_layer1.1.ReLU_relu                         -         -  
+18_layer1.1.Conv2d_conv2                36.864k  115.606M  
+19_layer1.1.BatchNorm2d_bn2                 128        64  
+20_layer1.1.ReLU_relu                         -         -  
+21_layer1.1.Conv2d_conv3                16.384k  51.3802M  
+22_layer1.1.BatchNorm2d_bn3                 512       256  
+23_layer1.1.ReLU_relu                         -         -  
+24_layer1.2.Conv2d_conv1                16.384k  51.3802M  
+25_layer1.2.BatchNorm2d_bn1                 128        64  
+26_layer1.2.ReLU_relu                         -         -  
+27_layer1.2.Conv2d_conv2                36.864k  115.606M  
+28_layer1.2.BatchNorm2d_bn2                 128        64  
+29_layer1.2.ReLU_relu                         -         -  
+30_layer1.2.Conv2d_conv3                16.384k  51.3802M  
+31_layer1.2.BatchNorm2d_bn3                 512       256  
+32_layer1.2.ReLU_relu                         -         -  
+33_layer2.0.Conv2d_conv1                32.768k   102.76M  
+34_layer2.0.BatchNorm2d_bn1                 256       128  
+35_layer2.0.ReLU_relu                         -         -  
+36_layer2.0.Conv2d_conv2               147.456k  115.606M  
+37_layer2.0.BatchNorm2d_bn2                 256       128  
+38_layer2.0.ReLU_relu                         -         -  
+39_layer2.0.Conv2d_conv3                65.536k  51.3802M  
+40_layer2.0.BatchNorm2d_bn3              1.024k       512  
+41_layer2.0.downsample.Conv2d_0        131.072k   102.76M  
+42_layer2.0.downsample.BatchNorm2d_1     1.024k       512  
+43_layer2.0.ReLU_relu                         -         -  
+44_layer2.1.Conv2d_conv1                65.536k  51.3802M  
+45_layer2.1.BatchNorm2d_bn1                 256       128  
+46_layer2.1.ReLU_relu                         -         -  
+47_layer2.1.Conv2d_conv2               147.456k  115.606M  
+48_layer2.1.BatchNorm2d_bn2                 256       128  
+49_layer2.1.ReLU_relu                         -         -  
+50_layer2.1.Conv2d_conv3                65.536k  51.3802M  
+51_layer2.1.BatchNorm2d_bn3              1.024k       512  
+52_layer2.1.ReLU_relu                         -         -  
+53_layer2.2.Conv2d_conv1                65.536k  51.3802M  
+54_layer2.2.BatchNorm2d_bn1                 256       128  
+55_layer2.2.ReLU_relu                         -         -  
+56_layer2.2.Conv2d_conv2               147.456k  115.606M  
+57_layer2.2.BatchNorm2d_bn2                 256       128  
+58_layer2.2.ReLU_relu                         -         -  
+59_layer2.2.Conv2d_conv3                65.536k  51.3802M  
+60_layer2.2.BatchNorm2d_bn3              1.024k       512  
+61_layer2.2.ReLU_relu                         -         -  
+62_layer2.3.Conv2d_conv1                65.536k  51.3802M  
+63_layer2.3.BatchNorm2d_bn1                 256       128  
+64_layer2.3.ReLU_relu                         -         -  
+65_layer2.3.Conv2d_conv2               147.456k  115.606M  
+66_layer2.3.BatchNorm2d_bn2                 256       128  
+67_layer2.3.ReLU_relu                         -         -  
+68_layer2.3.Conv2d_conv3                65.536k  51.3802M  
+69_layer2.3.BatchNorm2d_bn3              1.024k       512  
+70_layer2.3.ReLU_relu                         -         -  
+71_layer3.0.Conv2d_conv1               131.072k   102.76M  
+72_layer3.0.BatchNorm2d_bn1                 512       256  
+73_layer3.0.ReLU_relu                         -         -  
+74_layer3.0.Conv2d_conv2               589.824k  115.606M  
+75_layer3.0.BatchNorm2d_bn2                 512       256  
+76_layer3.0.ReLU_relu                         -         -  
+77_layer3.0.Conv2d_conv3               262.144k  51.3802M  
+78_layer3.0.BatchNorm2d_bn3              2.048k    1.024k  
+79_layer3.0.downsample.Conv2d_0        524.288k   102.76M  
+80_layer3.0.downsample.BatchNorm2d_1     2.048k    1.024k  
+81_layer3.0.ReLU_relu                         -         -  
+82_layer3.1.Conv2d_conv1               262.144k  51.3802M  
+83_layer3.1.BatchNorm2d_bn1                 512       256  
+84_layer3.1.ReLU_relu                         -         -  
+85_layer3.1.Conv2d_conv2               589.824k  115.606M  
+86_layer3.1.BatchNorm2d_bn2                 512       256  
+87_layer3.1.ReLU_relu                         -         -  
+88_layer3.1.Conv2d_conv3               262.144k  51.3802M  
+89_layer3.1.BatchNorm2d_bn3              2.048k    1.024k  
+90_layer3.1.ReLU_relu                         -         -  
+91_layer3.2.Conv2d_conv1               262.144k  51.3802M  
+92_layer3.2.BatchNorm2d_bn1                 512       256  
+93_layer3.2.ReLU_relu                         -         -  
+94_layer3.2.Conv2d_conv2               589.824k  115.606M  
+95_layer3.2.BatchNorm2d_bn2                 512       256  
+96_layer3.2.ReLU_relu                         -         -  
+97_layer3.2.Conv2d_conv3               262.144k  51.3802M  
+98_layer3.2.BatchNorm2d_bn3              2.048k    1.024k  
+99_layer3.2.ReLU_relu                         -         -  
+100_layer3.3.Conv2d_conv1              262.144k  51.3802M  
+101_layer3.3.BatchNorm2d_bn1                512       256  
+102_layer3.3.ReLU_relu                        -         -  
+103_layer3.3.Conv2d_conv2              589.824k  115.606M  
+104_layer3.3.BatchNorm2d_bn2                512       256  
+105_layer3.3.ReLU_relu                        -         -  
+106_layer3.3.Conv2d_conv3              262.144k  51.3802M  
+107_layer3.3.BatchNorm2d_bn3             2.048k    1.024k  
+108_layer3.3.ReLU_relu                        -         -  
+109_layer3.4.Conv2d_conv1              262.144k  51.3802M  
+110_layer3.4.BatchNorm2d_bn1                512       256  
+111_layer3.4.ReLU_relu                        -         -  
+112_layer3.4.Conv2d_conv2              589.824k  115.606M  
+113_layer3.4.BatchNorm2d_bn2                512       256  
+114_layer3.4.ReLU_relu                        -         -  
+115_layer3.4.Conv2d_conv3              262.144k  51.3802M  
+116_layer3.4.BatchNorm2d_bn3             2.048k    1.024k  
+117_layer3.4.ReLU_relu                        -         -  
+118_layer3.5.Conv2d_conv1              262.144k  51.3802M  
+119_layer3.5.BatchNorm2d_bn1                512       256  
+120_layer3.5.ReLU_relu                        -         -  
+121_layer3.5.Conv2d_conv2              589.824k  115.606M  
+122_layer3.5.BatchNorm2d_bn2                512       256  
+123_layer3.5.ReLU_relu                        -         -  
+124_layer3.5.Conv2d_conv3              262.144k  51.3802M  
+125_layer3.5.BatchNorm2d_bn3             2.048k    1.024k  
+126_layer3.5.ReLU_relu                        -         -  
+127_layer4.0.Conv2d_conv1              524.288k   102.76M  
+128_layer4.0.BatchNorm2d_bn1             1.024k       512  
+129_layer4.0.ReLU_relu                        -         -  
+130_layer4.0.Conv2d_conv2               2.3593M  115.606M  
+131_layer4.0.BatchNorm2d_bn2             1.024k       512  
+132_layer4.0.ReLU_relu                        -         -  
+133_layer4.0.Conv2d_conv3              1.04858M  51.3802M  
+134_layer4.0.BatchNorm2d_bn3             4.096k    2.048k  
+135_layer4.0.downsample.Conv2d_0       2.09715M   102.76M  
+136_layer4.0.downsample.BatchNorm2d_1    4.096k    2.048k  
+137_layer4.0.ReLU_relu                        -         -  
+138_layer4.1.Conv2d_conv1              1.04858M  51.3802M  
+139_layer4.1.BatchNorm2d_bn1             1.024k       512  
+140_layer4.1.ReLU_relu                        -         -  
+141_layer4.1.Conv2d_conv2               2.3593M  115.606M  
+142_layer4.1.BatchNorm2d_bn2             1.024k       512  
+143_layer4.1.ReLU_relu                        -         -  
+144_layer4.1.Conv2d_conv3              1.04858M  51.3802M  
+145_layer4.1.BatchNorm2d_bn3             4.096k    2.048k  
+146_layer4.1.ReLU_relu                        -         -  
+147_layer4.2.Conv2d_conv1              1.04858M  51.3802M  
+148_layer4.2.BatchNorm2d_bn1             1.024k       512  
+149_layer4.2.ReLU_relu                        -         -  
+150_layer4.2.Conv2d_conv2               2.3593M  115.606M  
+151_layer4.2.BatchNorm2d_bn2             1.024k       512  
+152_layer4.2.ReLU_relu                        -         -  
+153_layer4.2.Conv2d_conv3              1.04858M  51.3802M  
+154_layer4.2.BatchNorm2d_bn3             4.096k    2.048k  
+155_layer4.2.ReLU_relu                        -         -  
+156_avgpool                                   -         -  
+157_fc                                   409.8k    409.6k  
+----------------------------------------------------------------------------------------------------
+                        Totals
+Mult-Adds             4.08757G
+Non-trainable params         0
+Total params          23.9178M
+Trainable params      23.9178M
+====================================================================================================
+| Preparing model...
+data_loader_success!
+Test: [0/281]	
+Test: [10/281]	
+Test: [20/281]	
+Test: [30/281]	
+Test: [40/281]	
+Test: [50/281]	
+Test: [60/281]	
+Test: [70/281]	
+Test: [80/281]	
+Test: [90/281]	
+Test: [100/281]	
+Test: [110/281]	
+Test: [120/281]	
+Test: [130/281]	
+Test: [140/281]	
+Test: [150/281]	
+Test: [160/281]	
+Test: [170/281]	
+Test: [180/281]	
+Test: [190/281]	
+Test: [200/281]	
+Test: [210/281]	
+Test: [220/281]	
+Test: [230/281]	
+Test: [240/281]	
+Test: [250/281]	
+Test: [260/281]	
+Test: [270/281]	
+Test: [280/281]	

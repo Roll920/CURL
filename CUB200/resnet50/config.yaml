@@ -1,0 +1,8 @@
+# =========================== Basic Settings ===========================
+gpu_id: '1'
+data_base: '/mnt/ramdisk/CUB/trainval'
+class_num: 200
+pretrain_model: '/opt/luojh/pretrained_models/cub200/ResNet50.pth'
+batch_size: 32
+proxy_dataset_size: 256
+6x_larger_dataset: '/mnt/ramdisk/CUB/cub6w'
